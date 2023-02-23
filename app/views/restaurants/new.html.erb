@@ -1,0 +1,12 @@
+<%# name, category, address, phone_number  %>
+ <%= form_with model: @restaurant do |r| %>
+  <%= r.label :name%>
+  <%= r.text_field :name%>
+  <%= r.label :category %>
+  <%= r.select :category, Restaurant::CATEGORIES%>
+  <%= r.label :address %>
+  <%= r.text_field :address%>
+  <%= r.label :phone_number %>
+  <%= r.text_field :phone_number%>
+  <%= r.submit %>
+<% end %>

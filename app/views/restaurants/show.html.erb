@@ -1,0 +1,17 @@
+<span>Nom : <%= @restaurant.name %> </span> <br>
+<span>Catégorie : <%= @restaurant.category%></span> <br>
+<span>Adresse : <%= @restaurant.address %>  </span><br>
+<span>Téléphone: <%= @restaurant.phone_number %></span><br>
+
+<%# @restaurant.reviews est possible car has_many dans le modèle et reviews = [] %>
+<div>
+<% @restaurant.reviews.each do |review| %>
+<br>
+<span>Commentaire : <%= review.content %></span><br>
+<span>Note : <%= review.rating %></span>
+<%end%>
+</div>
+
+
+<%= link_to 'Home restaurants', restaurants_path%><br>
+<%= link_to 'Add a review', new_restaurant_review_path(@restaurant)%>
